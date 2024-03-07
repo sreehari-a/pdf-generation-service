@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,11 +25,16 @@ import com.itextpdf.text.DocumentException;
 import com.utils.htmlpdfparser.utils.PdfParserUtils;
 
 @RequestMapping(path = "utils/pdf")
-@CrossOrigin(origins = "http://192.168.1.11:3000", maxAge = 3600)
+@CrossOrigin(origins = {"http://192.168.1.11:3000","https://sreehari-a.github.io"}, maxAge = 3600)
 @RestController
 public class PdfParserController {
 
     private static final Logger logger = LogManager.getLogger(PdfParserController.class);
+    
+    @GetMapping("/test")
+    public String testApi() {
+    	return "Test Success";
+    }
 
 	@PostMapping("/generate-pdf")
 	public ResponseEntity<PdfResponse> convertHTML(@RequestBody Map<String, Object> request)

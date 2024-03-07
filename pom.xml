@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.utils</groupId>
-	<artifactId>html-pdf-parser</artifactId>
+	<artifactId>pdf-generation-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>html-pdf-parser</name>
 	<description>Demo project for Spring Boot</description>
